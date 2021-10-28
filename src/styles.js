@@ -16,7 +16,7 @@ export const GlobalStyle = createGlobalStyle`
 
     * {
         box-sizing: border-box;
-        font-family: "Helvetica Neue",Helvetica;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
     }
 
     body {
