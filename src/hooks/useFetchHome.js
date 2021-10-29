@@ -5,7 +5,7 @@ import {useState, useEffect} from 'react';
 // API
 import API from '../API'
 
-// Initialize state object
+// Initialize movie state object
 
 const initialState = {
     page: 0,
@@ -16,10 +16,13 @@ const initialState = {
 
 export const useFetchHome = () => {
 
-    // Set states to load movies
+    // Set states to load and search movies 
     const [state, setState] = useState(initialState);
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState(false);
+    const [searchTerm, setSearchTerm] = useState('');
+    const [loadMore, setLoadMore] = useState(false);
+
 
     const fetchMovies = async (page, searchTerm="") => {
         try {
@@ -39,11 +42,19 @@ export const useFetchHome = () => {
             setLoading(false);
     };
 
-    // return array of movies
+    // return and search for movies
     useEffect(() => {
-        fetchMovies(1)
-    }, []);
+        setState(initialState);
+        fetchMovies(1, searchTerm);
+    }, [searchTerm]);
+
+    useEffect(() => {
+        if (!loadMore) return;
+        fetchMovies(state.page + 1, searchTerm);
+        setLoadMore(false);
+    }, 
+    [loadMore, searchTerm, state.page]);
 
     // return states
-    return {state, loading, error};
+    return { state, loading, error, searchTerm, setSearchTerm, setLoadMore};
 };

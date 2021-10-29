@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react';
+import React from 'react';
 
 // Import Configurations 
 import {POSTER_SIZE, BACKDROP_SIZE, IMAGE_BASE_URL} from '../config'
@@ -7,6 +7,10 @@ import {POSTER_SIZE, BACKDROP_SIZE, IMAGE_BASE_URL} from '../config'
 import HeroImg from './HeroImg';
 import Grid from './Grid';
 import ThumbImg from './Thumbnails'
+import Spinner from './Spinner';
+import SearchBar from './SearchBar';
+import Button from './Button';
+
 
 // Import Hook
 import {useFetchHome} from '../hooks/useFetchHome';
@@ -17,9 +21,11 @@ import NoImage from '../images/no_image.jpg';
 
 const Home = () => {
 
-    const {state, loading, error} = useFetchHome();
+    const {state, loading, error, searchTerm, setSearchTerm, setLoadMore} = useFetchHome();
 
     console.log(state.results);
+
+    if (error) <div>Oops!, Something went wrong....</div>;
 
     return (
       // Show popular movies first
@@ -31,23 +37,27 @@ const Home = () => {
             text={state.results[0].overview}
           />
         ) : null}
-        
+        {/* Place serachbar */}
+        <SearchBar setSearchTerm={setSearchTerm} />
         {/* display popular movies in grid */}
-        <Grid header='Popular Movies'>
-          {state.results.map(movie => (
+        <Grid header={searchTerm ? "Results" : "Popular Movies"}>
+          {state.results.map((movie) => (
             <ThumbImg
-                key={movie.id}
-                clickable
-                image={
-                  movie.poster_path 
-                    ? IMAGE_BASE_URL + POSTER_SIZE + movie.poster_path
-                    : NoImage
-                }
-                movieId={movie.id}
-              />
-          ))};
-
+              key={movie.id}
+              clickable
+              image={
+                movie.poster_path
+                  ? IMAGE_BASE_URL + POSTER_SIZE + movie.poster_path
+                  : NoImage
+              }
+              movieId={movie.id}
+            />
+          ))}
         </Grid>
+        {loading && <Spinner />}
+        {/* Show load movie button */}
+        {state.page < state.total_pages && !loading && (
+          <Button text="More" callback={() => setLoadMore(true)} />)}
       </>
     );
 };

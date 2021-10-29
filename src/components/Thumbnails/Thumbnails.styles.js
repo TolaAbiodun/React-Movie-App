@@ -9,7 +9,7 @@ export const ThumbNails = styled.img`
     animation: animateThumbnail 0.5s;
 
     :hover {
-        opacity: 0.9;
+        opacity: 0.8;
         cursor: pointer;
     }
 
