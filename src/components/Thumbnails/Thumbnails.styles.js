@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 export const ThumbNails = styled.img`
     width: 100%;
-    max-width: 700px;
+    max-width: 500px;
     transition: all 0.2s;
     border-radius: 20px;
     object-fit: cover;
@@ -10,7 +10,6 @@ export const ThumbNails = styled.img`
 
     :hover {
         opacity: 0.8;
-        cursor: pointer;
     }
 
 
