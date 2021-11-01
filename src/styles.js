@@ -4,14 +4,14 @@ import { createGlobalStyle } from 'styled-components';
 export const GlobalStyle = createGlobalStyle`
     :root {
         --maxWidth: 1280px;
-        --white:#fff;
-        --lightGrey:#eee;
-        --medGrey:#353535;
+        --white: #fff;
+        --lightGrey: #eee;
+        --medGrey: #353535;
         --darkGrey: #1c1c1c;
-        --fontsm:1rem;
+        --fontsm: 1rem;
         --fontmd: 1.2rem;
-        --fontlg:1.5rem;
-        --fontxlg:2.5rem;
+        --fontlg: 1.5rem;
+        --fontxlg: 2.5rem;
     }
 
     * {
@@ -38,6 +38,12 @@ export const GlobalStyle = createGlobalStyle`
             font-size:1rem;
             color: var(--white);
         }
+
+        span {
+            font-size:var(--fontmd);
+            color: var(--white);
+            padding-right: 10px;
     }
 
-`
+    }
+`;
