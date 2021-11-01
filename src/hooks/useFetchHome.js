@@ -1,4 +1,4 @@
-// Create custom hook to load and set state of movies
+// Create custom hook to load and set state of movies on the homepage
 
 import {useState, useEffect} from 'react';
 
