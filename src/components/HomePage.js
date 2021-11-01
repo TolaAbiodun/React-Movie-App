@@ -17,7 +17,7 @@ import {useFetchHome} from '../hooks/useFetchHome';
 
 
 // Image
-import NoImage from '../images/no_image.jpg';
+import NoImage from '../images/no-img.png';
 
 const Home = () => {
 
