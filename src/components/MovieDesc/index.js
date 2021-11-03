@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 // import component
 import ThumbImg from '../Thumbnails';
@@ -49,5 +50,9 @@ import { Wrapper, Content, Text } from "./MovieDesc.styles";
         </Content>
     </Wrapper>
  );
+
+ MovieDescription.propTypes = {
+     movie: PropTypes.object,
+ }
 
  export default MovieDescription;

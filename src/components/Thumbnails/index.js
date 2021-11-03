@@ -1,5 +1,6 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
+import PropTypes from 'prop-types';
 
 // Import styles
 import { ThumbNails } from './Thumbnails.styles';
@@ -15,5 +16,11 @@ const ThumbImg = ({ image, movieId, clickable }) => (
     )}
   </div>
 ); 
+
+ThumbImg.propTypes = {
+  image: PropTypes.string,
+  movieId: PropTypes.number,
+  clickable: PropTypes.bool
+}
 
 export default ThumbImg;

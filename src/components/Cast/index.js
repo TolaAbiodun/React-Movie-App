@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 // Stlyes
 import {Wrapper, Image} from './Cast.styles';
@@ -11,4 +12,11 @@ const Cast = ({name, character, imageUrl}) => (
     </Wrapper>
 );
 
+// Check prop types
+
+Cast.propTypes = {
+    name: PropTypes.string,
+    character: PropTypes.string,
+    imageUrl: PropTypes.string,
+}
 export default Cast;
