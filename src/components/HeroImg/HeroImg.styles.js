@@ -48,6 +48,7 @@ export const Text = styled.div`
 
     @media screen and (max-width: 768px) {
       font-size: var(--fontlg);
+      text-align: left;
     }
   }
 

@@ -20,7 +20,9 @@ export const Content = styled.div`
         text-decoration: none !important;
     }
 
-  
+    @media screen and (max-width: 320px) {
+        padding: 4px;
+    }
     @media screen and (max-width: 768px) {
         font-size: var(--fontsm);
     }

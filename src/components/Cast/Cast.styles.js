@@ -21,7 +21,13 @@ export const Image = styled.img`
     border-radius: 15px;
     display: block;
     width: 100%;
-    height:220px;
-    object-fit: center;    
+    height: 200px;
+    object-fit: cover;
+    
+    @media screen and (max-width: 441px) {
+        height: 350px;
+        object-fit: center;
+    }
+
 `;
 

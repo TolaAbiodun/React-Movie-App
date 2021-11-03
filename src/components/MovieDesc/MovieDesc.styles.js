@@ -11,6 +11,7 @@ export const Wrapper = styled.div`
     padding: 40px 20px;
     animation: animateMovieDesc 1s;
 
+
     @keyframes animateMovieDesc {
         from {
             opacity:0;
@@ -28,6 +29,7 @@ export const Content = styled.div`
     background: rgba(0, 0, 0, 0.7);
     margin: 0 auto;
     border-radius: 20px;
+    
 
     @media screen and (max-width: 768px) {
         display: block;
@@ -43,18 +45,31 @@ export const Text = styled.div`
   color: var(--white);
   text-align: justify;
 
+  @media screen and (max-width: 320px) {
+      h1 {
+        font-size: var(--fontlg)
+      }
+    }
+
+  @media screen and (max-width: 376px) {
+    padding: 10px 20px;
+  }
+
   @media (max-width: 768px) {
-    text-align: justify;
-    text-justify: inter-word;
+    text-align: left;
 
     h1 {
       text-align: left;
     }
   }
-
   .rating-dir {
     display: flex;
     justify-content: flex-start;
+    @media screen and (max-width: 376px) {
+         h3 {
+      font-size: 14px;
+    }
+    }
   }
 
   .score {
@@ -72,20 +87,37 @@ export const Text = styled.div`
 
   .dir {
     margin: 0 0 0 50px;
-
     p {
       margin: 0;
     }
 
     h1 {
-      @media screen and (max-width: 768px) {
-        font-size: var(--fontlg);
+      @media screen and (max-width: 376px) {
+        font-size: var(--fontsm);
       }
     }
-  }
+
+    @media screen and (max-width: 376px) {
+      margin: 0 0 0 30px;
+         h3 {
+      font-size: 14px;
+    }
+        p {
+          font-size: 13px;
+        }
+      }
+    }
 
   .run-time {
     margin: 0 0 0 50px;
+    @media screen and (max-width: 376px) {
+      margin: 0 0 0 20px;
+      h3 {
+        font-size: 14px;         
+      }
 
+      p {
+        font-size: 13px;
+      }
   }
 `;
