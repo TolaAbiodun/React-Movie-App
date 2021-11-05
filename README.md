@@ -5,7 +5,7 @@
 
 
 ## About Movie Page
-![Movie Description] (MovieDesc.png)
+![Movie Description](MovieDesc.png)
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
