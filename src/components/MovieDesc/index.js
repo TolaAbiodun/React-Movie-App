@@ -55,4 +55,5 @@ import { Wrapper, Content, Text } from "./MovieDesc.styles";
      movie: PropTypes.object,
  }
 
+ 
  export default MovieDescription;

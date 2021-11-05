@@ -21,4 +21,5 @@ HeroImg.propTypes = {
     text: PropTypes.string,
 }
 
+
 export default HeroImg;

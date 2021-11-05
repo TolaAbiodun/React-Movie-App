@@ -19,4 +19,5 @@ Cast.propTypes = {
     character: PropTypes.string,
     imageUrl: PropTypes.string,
 }
+
 export default Cast;

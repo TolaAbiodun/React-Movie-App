@@ -22,4 +22,5 @@ BreadCrumb.propTypes = {
     movieTitle: PropTypes.string
 }
 
+
 export default BreadCrumb;
