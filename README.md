@@ -1,4 +1,11 @@
-# IMDB Movie App
+# Movie Box Entertainment
+
+## Home Page
+![Home Page](HomePage.png)
+
+
+## About Movie Page
+![Movie Description] (MovieDesc.png)
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
