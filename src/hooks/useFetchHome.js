@@ -1,6 +1,7 @@
 // Create custom hook to load and set state of movies on the homepage
 
 import {useState, useEffect} from 'react';
+import {isPersistentState} from '../helpers';
 
 // API
 import API from '../API'
@@ -44,9 +45,21 @@ export const useFetchHome = () => {
 
     // return and search for movies
     useEffect(() => {
+        // Fetch moveie from session storage if not in searchTerm
+        if(!searchTerm) {
+            const homeSession = isPersistentState('Home');
+
+
+            if (homeSession) {
+                setState(homeSession);
+                return;
+            }
+        }
+
         setState(initialState);
         fetchMovies(1, searchTerm);
     }, [searchTerm]);
+
 
     useEffect(() => {
         if (!loadMore) return;
@@ -54,6 +67,14 @@ export const useFetchHome = () => {
         setLoadMore(false);
     }, 
     [loadMore, searchTerm, state.page]);
+
+    // Push files to session storage
+    useEffect(() => {
+        if(!searchTerm) {
+            sessionStorage.setItem('Home', JSON.stringify(state))
+        }
+    },[searchTerm, state])
+
 
     // return states
     return { state, loading, error, searchTerm, setSearchTerm, setLoadMore};

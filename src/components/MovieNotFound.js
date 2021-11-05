@@ -1,5 +1,11 @@
 import React from "react";
 
-const MovieNotFound = () => <div>Movie Not Found</div>;
+import ErrorPage from './ErrorPage';
+
+const MovieNotFound = () =>  (
+    <>
+    <ErrorPage />
+    </>
+);
 
 export default MovieNotFound;

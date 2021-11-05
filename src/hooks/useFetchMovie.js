@@ -1,4 +1,5 @@
 import {useState, useEffect} from 'react';
+import {isPersistentState} from '../helpers';
 // API
 import API from '../API';
 
@@ -35,9 +36,24 @@ export const useFetchMovie = movieId => {
             }
         };
 
-        // Fecth movie 
+        // Fecth movie and save in session storage
+        const movieSessionState = isPersistentState(movieId);
+
+        if (movieSessionState) {
+            console.log('fetching data from session storage');
+            setState(movieSessionState);
+            setLoading(false);
+            return;
+        }
+        console.log('fetching data from API');
+        
         fetchMovieData();
     }, [movieId]);
+
+    // Push movie data to session storage 
+    useEffect(() => { 
+        sessionStorage.setItem(movieId, JSON.stringify(state));
+    }, [movieId, state])
 
     // return states
     return {state, loading, error}

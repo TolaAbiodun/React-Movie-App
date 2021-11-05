@@ -23,6 +23,10 @@ export const Image = styled.img`
     width: 100%;
     height: 200px;
     object-fit: cover;
+
+    :hover {
+        opacity: 0.8;
+    }
     
     @media screen and (max-width: 441px) {
         height: 350px;
