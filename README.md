@@ -1,4 +1,11 @@
 # Movie Box Entertainment
+## Features
+ - Popular Movies based on ratings
+ - Quick Search 
+ - Movie Desciption Page (Category, Rating, Director(s) & Running time)
+ - Movie Actors Thumbnails
+ - Session Storage
+
 
 ## Home Page
 ![Home Page](HomePage.png)
